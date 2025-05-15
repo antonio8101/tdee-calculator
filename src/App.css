@@ -1,42 +1,103 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@tailwind utilities;
+
+.chalk-font {
+  font-family: 'Schoolbell', cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.result{
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.target{
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.formula{
+  font-size: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1,h2,h3,h4,h5,h6{
+  font-size: 1.5rem; /* 18px */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+label, input, select {
+  font-size: 1.3rem; /* 18px */
+}
+
+input, select {
+  padding: 0.5rem;
+}
+
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+}
+
+.chalkboard {
+  background: #2f3e46;
+  color: #f1f1f1;
+  font-family: 'Courier New', monospace;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .flex-responsive {
+    flex-direction: row-reverse;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1,h2,h3,h4,h5,h6{
+    font-size: 1.2rem; /* 18px */
+  }
+
+  label, input, select {
+    font-size: 1.1rem; /* 18px */
+  }
+
+  body {
+    font-size: 16px;
+    padding: 2rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 767px) {
+
+  body {
+    font-size: 24px;
+    line-height: 1.6;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .form{
+    min-height: 95vh;
+  }
 
-.read-the-docs {
-  color: #888;
+  .chalkboard {
+    margin-bottom: -2rem;
+    z-index: 1;
+    top: 0;
+    border-radius: 0;
+    padding: 2rem !important;
+    min-height: 50vh;
+  }
+
+  .form-container {
+    position: relative;
+    z-index: 10;
+    margin-top: -2rem;
+  }
 }
